@@ -1,0 +1,46 @@
+name:                envuserdata
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/doublecrowngaming/envuserdata
+license:             BSD3
+license-file:        LICENSE
+author:              Jesse Kempf
+maintainer:          jesse.kempf@doublecrown.co
+copyright:           2020 Double Crown Gaming Co.
+category:            System
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+tested-with:         GHC == 8.6.5
+
+library
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+  hs-source-dirs:      src
+  exposed-modules:     Lib
+  build-depends:       base >= 4.7 && < 5
+                     , aeson
+                     , req
+                     , unix
+executable envuserdata
+  default-language:    Haskell2010
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  build-depends:       base
+                     , envuserdata
+test-suite spec
+  default-language:    Haskell2010
+  ghc-options:         -Wall
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , envuserdata
+                     , hspec
+                     , QuickCheck
+
+source-repository head
+  type:     git
+  location: https://github.com/doublecrowngaming/envuserdata
