@@ -21,7 +21,10 @@ library
   exposed-modules:     Lib
   build-depends:       base >= 4.7 && < 5
                      , aeson
+                     , containers
                      , req
+                     , scientific
+                     , text
                      , unix
 executable envuserdata
   default-language:    Haskell2010
